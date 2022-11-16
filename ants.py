@@ -616,7 +616,7 @@ class SlowThrower(ThrowerAnt):
                 Bee.action(target, gamestate)
         if target is not None : 
             target.is_slow = True         
-            target.action = target_action  #Assign new function to target.function
+            target.action = target_action  #Assign target.function to a new function
             if target.is_slow == True:   # When second time call slow.action, remainning slow turning back to 5
                 self.slow_turning = 5             
         # END Problem EC
