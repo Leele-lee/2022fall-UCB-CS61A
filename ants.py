@@ -409,9 +409,7 @@ class TankAnt(ContainerAnt):
     def action(self, gamestate):
         if self.ant_contained is not None:
             super().action(gamestate)
-        attack_bees = self.place.bees
-        tank_attack_bees = attack_bees[:]
-        for bee in tank_attack_bees:
+        for bee in self.place.bees[:]:
             bee.reduce_health(self.damage)
         
 # END Problem 9
