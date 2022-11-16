@@ -520,7 +520,7 @@ class Bee(Insect):
     name = 'Bee'
     damage = 1
     is_waterproof = True
-    is_slow = False
+    # is_slow = False 
     # OVERRIDE CLASS ATTRIBUTES HERE
 
     def sting(self, ant):
@@ -615,10 +615,8 @@ class SlowThrower(ThrowerAnt):
             if gamestate.time % 2 == 0 or self.slow_turning < 0:
                 Bee.action(target, gamestate)
         if target is not None : 
-            target.is_slow = True         
-            target.action = target_action  #Assign target.function to a new function
-            if target.is_slow == True:   # When second time call slow.action, remainning slow turning back to 5
-                self.slow_turning = 5             
+            self.slow_turning = 5. # Every time call slow.action, remainning slow turning back to 5
+            target.action = target_action  #Assign target.function to a new function          
         # END Problem EC
 
 
